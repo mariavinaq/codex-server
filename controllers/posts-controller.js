@@ -45,25 +45,25 @@ const getPost = async (req, res) => {
             return res.status(404).json({ message: "Post not found." });
         }
 
-        const comments = await knex("comments")
-            .join("users", "comments.user_id", "=", "users.id")
-            .where("comments.post_id", postId)
-            .select(
-                "comments.id",
-                "comments.comment",
-                "comments.timestamp",
-                "users.username as comment_username",
-                "users.avatar as comment_avatar"
-            );
+        // const comments = await knex("comments")
+        //     .join("users", "comments.user_id", "=", "users.id")
+        //     .where("comments.post_id", postId)
+        //     .select(
+        //         "comments.id",
+        //         "comments.comment",
+        //         "comments.timestamp",
+        //         "users.username as comment_username",
+        //         "users.avatar as comment_avatar"
+        //     );
 
-        const postWithComments = {
-            ...post,
-            comments
-        }
-
-        res.status(200).json(postWithComments);
+        // const postWithComments = {
+        //     ...post,
+        //     comments
+        // }
+        // res.status(200).json(postWithComments);
+        res.status(200).json(post);
     } catch {
-        res.status(500).json({ message: `Error receiving post: ${error}` });
+        res.status(500).json({ message: `Error submitting post: ${error}` });
     }
 };
 

@@ -2,7 +2,27 @@ import initKnex from "knex";
 import configuration from "../knexfile.js";
 const knex = initKnex(configuration);
 
-const PostComment = async (req, res) => {
+const getComments = async (req, res) => {
+    const { id: postId } = req.params;
+
+    try {
+        const comment = await knex("comments")
+            .join("users", "comments.user_id", "=", "users.id")
+            .where("comments.post_id", postId)
+            .select(
+                "comments.id",
+                "comments.comment",
+                "comments.timestamp",
+                "users.username as comment_username",
+                "users.avatar as comment_avatar"
+            );
+        res.status(200).json(comment);
+    } catch {
+        res.status(500).json({ message: `Error posting comment: ${error}` });
+    }
+};
+
+const postComment = async (req, res) => {
     const { id: postId } = req.params;
     const { comment, post_id = postId, user_id = 1 } = req.body;
 
@@ -18,4 +38,4 @@ const PostComment = async (req, res) => {
     }
 };
 
-export { PostComment };
+export { getComments, postComment };
