@@ -70,7 +70,7 @@ const getPost = async (req, res) => {
 const postPost = async (req, res) => {
     const { title, description, html, css, js, thumbnail = `/images/${req.file.filename}`, user_id = 1, likes = 0 } = req.body;
     try {
-        const post = await knex("posts").insert({
+        const newPost = await knex("posts").insert({
             title,
             description,
             html,
@@ -79,7 +79,7 @@ const postPost = async (req, res) => {
             thumbnail,
             user_id,
         });
-        res.status(200).json(post);
+        res.status(200).json(newPost);
     } catch (error) {
         res.status(500).json({ message: `Error submitting post: ${error}` });
     }
