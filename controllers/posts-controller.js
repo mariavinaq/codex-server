@@ -15,7 +15,7 @@ const getPosts = async (_req, res) => {
             );
         res.status(200).json(posts);
     } catch {
-        res.status(500).send("Error retrieving posts.")
+        res.status(500).json({ message: `Error receiving posts: ${error}` });
     }
 };
 
@@ -63,8 +63,26 @@ const getPost = async (req, res) => {
 
         res.status(200).json(postWithComments);
     } catch {
-        res.status(500).send("Error retrieving post.")
+        res.status(500).json({ message: `Error receiving post: ${error}` });
     }
 };
 
-export { getPosts, getPost };
+const postPost = async (req, res) => {
+    const { title, description, html, css, js, thumbnail = `/images/${req.file.filename}`, user_id = 1, likes = 0 } = req.body;
+    try {
+        const post = await knex("posts").insert({
+            title,
+            description,
+            html,
+            css,
+            js,
+            thumbnail,
+            user_id,
+        });
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(500).json({ message: `Error submitting post: ${error}` });
+    }
+};
+
+export { getPosts, getPost, postPost };
