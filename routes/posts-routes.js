@@ -6,7 +6,7 @@ import { getComments, postComment } from "../controllers/comments-controller.js"
 const postsRoutes = express.Router();
 
 const storage = multer.diskStorage({
-    destination: "public/images/",
+    destination: "public/media/",
     filename: (_req, file, callback) => {
         const uniqueName = Date.now() + '-' + file.originalname;
         callback(null, uniqueName);
@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 postsRoutes.route("/").get(getPosts).post(upload.single("thumbnail"), postPost);
-postsRoutes.route("/:id").get(getPost);
-postsRoutes.route("/:id/comments").get(getComments).post(postComment);
+postsRoutes.route("/:postId").get(getPost);
+postsRoutes.route("/:postId/comments").get(getComments).post(postComment);
 
 export default postsRoutes;

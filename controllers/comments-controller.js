@@ -3,7 +3,7 @@ import configuration from "../knexfile.js";
 const knex = initKnex(configuration);
 
 const getComments = async (req, res) => {
-    const { id: postId } = req.params;
+    const { postId: postId } = req.params;
 
     try {
         const comment = await knex("comments")
@@ -17,13 +17,13 @@ const getComments = async (req, res) => {
                 "users.avatar as comment_avatar"
             );
         res.status(200).json(comment);
-    } catch {
+    } catch (error) {
         res.status(500).json({ message: `Error posting comment: ${error}` });
     }
 };
 
 const postComment = async (req, res) => {
-    const { id: postId } = req.params;
+    const { postId: postId } = req.params;
     const { comment, post_id = postId, user_id = 1 } = req.body;
 
     try {

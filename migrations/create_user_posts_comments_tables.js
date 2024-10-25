@@ -42,6 +42,24 @@ export function up(knex) {
                 .inTable("users")
                 .onUpdate("CASCADE")
                 .onDelete("CASCADE");
+        })
+        .createTable("bookmarks", (table) => {
+            table.increments("id").primary();
+            table.timestamp("timestamp").defaultTo(knex.fn.now());
+            table.integer("post_id").unsigned().notNullable();
+            table.integer("user_id").unsigned().notNullable();
+            table
+                .foreign("post_id")
+                .references("id")
+                .inTable("posts")
+                .onUpdate("CASCADE")
+                .onDelete("CASCADE");
+            table
+                .foreign("user_id")
+                .references("id")
+                .inTable("users")
+                .onUpdate("CASCADE")
+                .onDelete("CASCADE");
         });
 }
 

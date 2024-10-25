@@ -8,6 +8,7 @@ const getPosts = async (_req, res) => {
             .join("users", "posts.user_id", "=", "users.id")
             .select(
                 "posts.id",
+                "posts.timestamp",
                 "posts.title",
                 "posts.thumbnail",
                 "users.username",
@@ -20,7 +21,7 @@ const getPosts = async (_req, res) => {
 };
 
 const getPost = async (req, res) => {
-    const { id: postId } = req.params;
+    const { postId: postId } = req.params;
 
     try {
         const post = await knex("posts")
@@ -45,30 +46,14 @@ const getPost = async (req, res) => {
             return res.status(404).json({ message: "Post not found." });
         }
 
-        // const comments = await knex("comments")
-        //     .join("users", "comments.user_id", "=", "users.id")
-        //     .where("comments.post_id", postId)
-        //     .select(
-        //         "comments.id",
-        //         "comments.comment",
-        //         "comments.timestamp",
-        //         "users.username as comment_username",
-        //         "users.avatar as comment_avatar"
-        //     );
-
-        // const postWithComments = {
-        //     ...post,
-        //     comments
-        // }
-        // res.status(200).json(postWithComments);
         res.status(200).json(post);
-    } catch {
+    } catch (error) {
         res.status(500).json({ message: `Error submitting post: ${error}` });
     }
 };
 
 const postPost = async (req, res) => {
-    const { title, description, html, css, js, thumbnail = `/images/${req.file.filename}`, user_id = 1, likes = 0 } = req.body;
+    const { title, description, html, css, js, thumbnail = `/media/${req.file.filename}`, user_id = 1, likes = 0 } = req.body;
     try {
         const newPost = await knex("posts").insert({
             title,
