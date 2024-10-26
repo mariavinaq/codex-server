@@ -1,0 +1,28 @@
+body {
+    background-color: lavender;
+}
+
+.floater {
+    position: fixed;
+    left: 30px;
+    top: 80px;
+    width: 4rem;
+    transition: top 3s ease-out;
+    animation: bounce 2.5s infinite;
+    z-index: 3;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

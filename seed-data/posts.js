@@ -1,117 +1,71 @@
+import fs from "fs";
+
 const posts = [
     {
         id: 1,
         timestamp: "2024-03-01 00:00:01.000000",
         user_id: 1,
-        title: "This 1 is a sample title for this specific post, just for an example.",
-        description: "Lorem 1 ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat orci. Mauris elementum odio interdum odio ornare, id gravida dolor aliquet. Cras sit amet nulla turpis. Sed commodo metus et ultricies facilisis. Nunc quis sapien pellentesque, tempus lectus quis, consectetur purus. Aliquam eget maximus arcu. Praesent maximus mauris risus, vel consectetur dolor pellentesque dictum. Ut molestie lobortis sem, in semper mi cursus quis. Vivamus eget tempus urna. Vivamus vestibulum vulputate mauris eu bibendum. Donec orci velit, tempor eget nunc ac, cursus sodales eros. Nullam non cursus velit.",
-        thumbnail: "/media/media1.png",
-        html: `<h1>Testing</h1>
-<button id="button" onclick="changeColor()">hi</button>`,
-        css: `button {
-    color:red;
-}
-button:hover {
-    background-color: yellow;
-}`,
-        js:  `function changeColor(){
-    document.getElementById("button").style.color = "blue"
-}`,
+        title: "Smooth loading dots animation with CSS",
+        description: "Add a touch of flair to your loading screens with this minimal, elegant loading dots animation! Using only CSS, this snippet creates a bouncing dot animation where each dot has a slight delay, creating a smooth, dynamic loading effect. Perfect for web projects needing an extra hint of sophistication, this snippet is easily customizable, lightweight, and simple to implement for any loading state on your site.",
+        thumbnail: "/media/code-1.mov",
+        html: fs.readFileSync('seeds/code-1/index.html', 'utf8'),
+        css: fs.readFileSync('seeds/code-1/style.css', 'utf8'),
+        js:  fs.readFileSync('seeds/code-1/main.js', 'utf8'),
     },
     {
         id: 2,
         timestamp: "2023-04-01 00:00:01.000000",
         user_id: 2,
-        title: "This 2 is a sample title for this specific post, just for an example.",
-        description: "Lorem 2 ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat orci. Mauris elementum odio interdum odio ornare, id gravida dolor aliquet. Cras sit amet nulla turpis. Sed commodo metus et ultricies facilisis. Nunc quis sapien pellentesque, tempus lectus quis, consectetur purus. Aliquam eget maximus arcu. Praesent maximus mauris risus, vel consectetur dolor pellentesque dictum. Ut molestie lobortis sem, in semper mi cursus quis. Vivamus eget tempus urna. Vivamus vestibulum vulputate mauris eu bibendum. Donec orci velit, tempor eget nunc ac, cursus sodales eros. Nullam non cursus velit.",
-        thumbnail: "/media/media2.png",
-        html: `<h1>Testing</h1>
-<button id="button" onclick="changeColor()">hi</button>`,
-        css: `button {
-    color:blue;
-}
-button:hover {
-    background-color: red;
-}`,
-        js:  `function changeColor(){
-    document.getElementById("button").style.color = "yellow"
-}`,
+        title: "Floating yogi with smooth mouse follow and bounce animation.",
+        description: "Add a touch of playfulness to your site with this floating yogi icon that smoothly follows the user’s mouse movements on the Y-axis and features a subtle bounce animation. Though it showcases a yoga icon here, this flexible snippet can be repurposed for other fun themes, like rockets, astronauts, or floating objects. With minimal CSS and JavaScript, it’s an easy way to introduce an interactive, engaging element to any web project!",
+        thumbnail: "/media/code-2.mov",
+        html: fs.readFileSync('seeds/code-2/index.html', 'utf8'),
+        css: fs.readFileSync('seeds/code-2/style.css', 'utf8'),
+        js:  fs.readFileSync('seeds/code-2/main.js', 'utf8'),
     },
     {
         id: 3,
         timestamp: "2024-03-01 00:00:01.000000",
         user_id: 3,
-        title: "This 3 is a sample title for this specific post, just for an example.",
-        description: "Lorem 3 ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat orci. Mauris elementum odio interdum odio ornare, id gravida dolor aliquet. Cras sit amet nulla turpis. Sed commodo metus et ultricies facilisis. Nunc quis sapien pellentesque, tempus lectus quis, consectetur purus. Aliquam eget maximus arcu. Praesent maximus mauris risus, vel consectetur dolor pellentesque dictum. Ut molestie lobortis sem, in semper mi cursus quis. Vivamus eget tempus urna. Vivamus vestibulum vulputate mauris eu bibendum. Donec orci velit, tempor eget nunc ac, cursus sodales eros. Nullam non cursus velit.",
-        thumbnail: "/media/media3.png",
-        html: `<h1>Testing</h1>
-<button id="button" onclick="changeColor()">hi</button>`,
-        css: `button {
-    color:yellow;
-}
-button:hover {
-    background-color: blue;
-}`,
-        js: `function changeColor(){
-    document.getElementById("button").style.color = "red"
-}`,
+        title: "Beginner-friendly Express server setup in just a few lines",
+        description: "This Express.js setup is a straightforward starting point for beginners, containing everything you need for a basic server. It includes JSON parsing with express.json() and a simple GET route at the root ('/') that responds with a UTF-8 encoded 'Hello world!' message to confirm the server is running. The app.listen() function starts the server on a specified port and logs the server URL for easy access. This template provides the fundamental setup needed to start building APIs or adding routes, making it a versatile and beginner-friendly foundation.",
+        thumbnail: "/media/code-3.png",
+        html: fs.readFileSync('seeds/code-3/index.html', 'utf8'),
+        css: fs.readFileSync('seeds/code-3/style.css', 'utf8'),
+        js:  fs.readFileSync('seeds/code-3/main.js', 'utf8'),
     },
     {
         id: 4,
         timestamp: "2024-02-01 00:00:01.000000",
         user_id: 2,
-        title: "This 12 is a sample title for this specific post, just for an example.",
-        description: "Lorem 12 ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat orci. Mauris elementum odio interdum odio ornare, id gravida dolor aliquet. Cras sit amet nulla turpis. Sed commodo metus et ultricies facilisis. Nunc quis sapien pellentesque, tempus lectus quis, consectetur purus. Aliquam eget maximus arcu. Praesent maximus mauris risus, vel consectetur dolor pellentesque dictum. Ut molestie lobortis sem, in semper mi cursus quis. Vivamus eget tempus urna. Vivamus vestibulum vulputate mauris eu bibendum. Donec orci velit, tempor eget nunc ac, cursus sodales eros. Nullam non cursus velit.",
-        thumbnail: "/media/media4.png",
-        html: `<h1>Testing 2</h1>
-<button id="button" onclick="changeColor()">hi</button>`,
-        css: `button {
-    color:red;
-}
-button:hover {
-    background-color: yellow;
-}`,
-        js:  `function changeColor(){
-    document.getElementById("button").style.color = "blue"
-}`,
+        title: "Dynamic starry night effect with customizable twinkling stars",
+        description: "This JavaScript and CSS snippet creates a starry night effect with twinkling stars, perfect for adding an animated background to any webpage. Easily customize the count variable to adjust the number of stars, modify the size variable to change star dimensions, or fine-tune animation-duration and animation-delay to control the twinkling speed. Additionally, the background and box-shadow properties allow for custom star colors and glow effects, making this snippet adaptable to a range of themes and designs.",
+        thumbnail: "/media/code-4.mov",
+        html: fs.readFileSync('seeds/code-4/index.html', 'utf8'),
+        css: fs.readFileSync('seeds/code-4/style.css', 'utf8'),
+        js:  fs.readFileSync('seeds/code-4/main.js', 'utf8'),
     },
     {
         id: 5,
         timestamp: "2024-01-01 00:00:01.000000",
         user_id: 3,
-        title: "This 13 is a sample title for this specific post, just for an example.",
-        description: "Lorem 13 ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat orci. Mauris elementum odio interdum odio ornare, id gravida dolor aliquet. Cras sit amet nulla turpis. Sed commodo metus et ultricies facilisis. Nunc quis sapien pellentesque, tempus lectus quis, consectetur purus. Aliquam eget maximus arcu. Praesent maximus mauris risus, vel consectetur dolor pellentesque dictum. Ut molestie lobortis sem, in semper mi cursus quis. Vivamus eget tempus urna. Vivamus vestibulum vulputate mauris eu bibendum. Donec orci velit, tempor eget nunc ac, cursus sodales eros. Nullam non cursus velit.",
-        thumbnail: "/media/media2.png",
-        html: `<h1>Testing 2</h1>
-<button id="button" onclick="changeColor()">hi</button>`,
-        css: `button {
-    color:blue;
-}
-button:hover {
-    background-color: red;
-}`,
-        js:  `function changeColor(){
-    document.getElementById("button").style.color = "yellow"
-}`,
+        title: "Setting up multer with unique file names for media storage",
+        description: "This setup uses multer with disk storage to handle media uploads in the backend, ideal for storing images or videos. The diskStorage configuration specifies a destination folder and leverages a uniqueName format for filenames, generated by combining a timestamp with the original filename. This unique naming system prevents file conflicts, ensuring each upload has a distinct name, which is particularly useful for applications handling multiple media files. This configuration provides a solid foundation for integrating file upload capabilities, making it easy to expand with routes for handling file uploads in Express.",
+        thumbnail: "/media/code-5.png",
+        html: fs.readFileSync('seeds/code-5/index.html', 'utf8'),
+        css: fs.readFileSync('seeds/code-5/style.css', 'utf8'),
+        js:  fs.readFileSync('seeds/code-5/main.js', 'utf8'),
     },
     {
         id: 6,
         timestamp: "2023-09-01 00:00:01.000000",
         user_id: 1,
-        title: "This 11 is a sample title for this specific post, just for an example.",
-        description: "Lorem 11 ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut erat orci. Mauris elementum odio interdum odio ornare, id gravida dolor aliquet. Cras sit amet nulla turpis. Sed commodo metus et ultricies facilisis. Nunc quis sapien pellentesque, tempus lectus quis, consectetur purus. Aliquam eget maximus arcu. Praesent maximus mauris risus, vel consectetur dolor pellentesque dictum. Ut molestie lobortis sem, in semper mi cursus quis. Vivamus eget tempus urna. Vivamus vestibulum vulputate mauris eu bibendum. Donec orci velit, tempor eget nunc ac, cursus sodales eros. Nullam non cursus velit.",
-        thumbnail: "/media/media3.png",
-        html: `<h1>Testing 2</h1>
-<button id="button" onclick="changeColor()">hi</button>`,
-        css: `button {
-    color:yellow;
-}
-button:hover {
-    background-color: blue;
-}`,
-        js: `function changeColor(){
-    document.getElementById("button").style.color = "red"
-}`,
+        title: "Flashing discount banner",
+        description: "This pure CSS snippet creates an eye-catching discount banner with a flashing background effect, perfect for promoting special offers. Using keyframes, the background color of the discount text alternates between dark grey and a vibrant blue, drawing attention to the discount code displayed. With no JavaScript required, this lightweight setup is easy to implement and customize by adjusting colors, font sizes, or animation timing. This snippet is ideal for highlighting promotions and enhancing user engagement with minimal code.",
+        thumbnail: "/media/code-6.mov",
+        html: fs.readFileSync('seeds/code-6/index.html', 'utf8'),
+        css: fs.readFileSync('seeds/code-6/style.css', 'utf8'),
+        js:  fs.readFileSync('seeds/code-6/main.js', 'utf8'),
     },
 ];
 

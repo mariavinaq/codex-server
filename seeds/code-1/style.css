@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(249, 192, 169);
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+}
+
+.loader__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: lightsalmon;
+    opacity: 1;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.loader__dot--2 {
+    animation-delay: 0.2s;
+}
+
+.loader__dot--3 {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    100% {
+        opacity: 75%;
+        transform: translateY(1rem);
+    }
+}

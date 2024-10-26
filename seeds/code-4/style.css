@@ -1,0 +1,31 @@
+body {
+	background-color: black;
+}
+
+.stars {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+i {
+    position: absolute;
+    background: #FFFFC5;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #FFFFC5,
+        0 0 20px #FFFFC5,
+        0 0 40px #FFFFC5,
+        0 0 80px #FFFFC5;
+    animation: twinkle linear infinite;
+}
+
+@keyframes twinkle {
+        0% {opacity: 0;}
+        10% {opacity: 1;}
+        90% {opacity: 1;}
+        100% {opacity: 0;}
+}
