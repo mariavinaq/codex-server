@@ -13,8 +13,8 @@ const getComments = async (req, res) => {
                 "comments.id",
                 "comments.comment",
                 "comments.timestamp",
-                "users.username as comment_username",
-                "users.avatar as comment_avatar"
+                "users.username",
+                "users.avatar"
             );
         res.status(200).json(comment);
     } catch (error) {

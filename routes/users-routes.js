@@ -1,8 +1,8 @@
 import express from "express";
-import { postBookmark } from "../controllers/bookmarks-controller.js";
+import { getBookmarks, postBookmark } from "../controllers/bookmarks-controller.js";
 
 const usersRoutes = express.Router();
 
-usersRoutes.route("/bookmarks").post(postBookmark);
+usersRoutes.route("/:userId/bookmarks").get(getBookmarks).post(postBookmark);
 
 export default usersRoutes;

@@ -6,6 +6,10 @@ const getPosts = async (_req, res) => {
     try {
         const posts = await knex("posts")
             .join("users", "posts.user_id", "=", "users.id")
+            .leftJoin("bookmarks", function () {
+                this.on("posts.id", "=", "bookmarks.post_id")
+                  .andOn("bookmarks.user_id", "=", 1); 
+              })
             .select(
                 "posts.id",
                 "posts.timestamp",
@@ -13,7 +17,8 @@ const getPosts = async (_req, res) => {
                 "posts.thumbnail",
                 "posts.likes",
                 "users.username",
-                "users.avatar"
+                "users.avatar",
+                "bookmarks.id as bookmarked"
             );
 
         res.status(200).json(posts);
@@ -28,6 +33,10 @@ const getPost = async (req, res) => {
     try {
         const post = await knex("posts")
             .join("users", "posts.user_id", "=", "users.id")
+            .leftJoin("bookmarks", function () {
+                this.on("posts.id", "=", "bookmarks.post_id")
+                  .andOn("bookmarks.user_id", "=", 1); 
+              })
             .where("posts.id", postId)
             .select(
                 "posts.id",
@@ -39,8 +48,9 @@ const getPost = async (req, res) => {
                 "posts.js",
                 "posts.likes",
                 "posts.timestamp",
-                "users.username as post_username",
-                "users.avatar as post_avatar"
+                "users.username",
+                "users.avatar",
+                "bookmarks.id as bookmarked"
             )
             .first();
 
