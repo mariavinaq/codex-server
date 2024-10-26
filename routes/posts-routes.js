@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { getPosts, getPost, postPost } from "../controllers/posts-controller.js";
+import { getPosts, getPost, postPost, putLike } from "../controllers/posts-controller.js";
 import { getComments, postComment } from "../controllers/comments-controller.js";
 
 const postsRoutes = express.Router();
@@ -17,5 +17,6 @@ const upload = multer({ storage: storage })
 postsRoutes.route("/").get(getPosts).post(upload.single("thumbnail"), postPost);
 postsRoutes.route("/:postId").get(getPost);
 postsRoutes.route("/:postId/comments").get(getComments).post(postComment);
+postsRoutes.route("/:postId/likes").put(putLike);
 
 export default postsRoutes;

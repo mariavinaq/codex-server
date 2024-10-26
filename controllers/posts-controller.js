@@ -11,11 +11,13 @@ const getPosts = async (_req, res) => {
                 "posts.timestamp",
                 "posts.title",
                 "posts.thumbnail",
+                "posts.likes",
                 "users.username",
                 "users.avatar"
             );
+
         res.status(200).json(posts);
-    } catch {
+    } catch (error) {
         res.status(500).json({ message: `Error receiving posts: ${error}` });
     }
 };
@@ -70,4 +72,21 @@ const postPost = async (req, res) => {
     }
 };
 
-export { getPosts, getPost, postPost };
+const putLike = async (req, res) => {
+    const { postId: postId } = req.params;
+    try {
+        await knex("posts")
+            .where("id", postId)
+            .increment("likes", 1);
+
+        const post = await knex("posts")
+            .where("posts.id", postId)
+            .first();
+        
+        res.status(200).json(post);
+    } catch (error) {
+        res.status(500).json({ message: `Error liking post: ${error}` });
+    }
+}
+
+export { getPosts, getPost, postPost, putLike };
