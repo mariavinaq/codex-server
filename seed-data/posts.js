@@ -4,7 +4,7 @@ const posts = [
     {
         id: 1,
         timestamp: "2024-10-14 00:00:01.000000",
-        user_id: 1,
+        user_id: 3,
         title: "Smooth loading dots animation with CSS",
         description: "Add a touch of flair to your loading screens with this minimal, elegant loading dots animation! Using only CSS, this snippet creates a bouncing dot animation where each dot has a slight delay, creating a smooth, dynamic loading effect. Perfect for web projects needing an extra hint of sophistication, this snippet is easily customizable, lightweight, and simple to implement for any loading state on your site.",
         thumbnail: "/media/code-1.mov",
@@ -88,7 +88,7 @@ const posts = [
     {
         id: 8,
         timestamp: "2024-10-27 00:00:01.000000",
-        user_id: 3,
+        user_id: 1,
         title: "Scroll-activated sliding sidebar with social icons",
         description: "This CSS and JavaScript snippet creates a sliding sidebar navigation that appears only after scrolling, adding a sleek and interactive touch to your page. The sidebar, positioned on the right, holds social media icons and stays hidden until the user scrolls past a specific point, then smoothly slides into view. The sidebar’s opacity and position adjust on scroll, making it subtle yet engaging. This effect is ideal for keeping the interface clean and bringing in social links only when users start exploring the content, and it’s easy to customize by adjusting scroll offset, animation speed, and icon styles.",
         thumbnail: "/media/code-8.mov",

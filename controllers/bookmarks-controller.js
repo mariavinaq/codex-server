@@ -16,6 +16,7 @@ const getBookmarks = async (req, res) => {
                 "posts.title",
                 "posts.thumbnail",
                 "posts.likes",
+                "users.id as user_id",
                 "users.username",
                 "users.avatar",
                 "bookmarks.timestamp as bookmarked_on",

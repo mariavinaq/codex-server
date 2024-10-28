@@ -16,6 +16,7 @@ const getPosts = async (_req, res) => {
                 "posts.title",
                 "posts.thumbnail",
                 "posts.likes",
+                "users.id as user_id",
                 "users.username",
                 "users.avatar",
                 "bookmarks.id as bookmarked"
@@ -48,6 +49,7 @@ const getPost = async (req, res) => {
                 "posts.js",
                 "posts.likes",
                 "posts.timestamp",
+                "users.id as user_id",
                 "users.username",
                 "users.avatar",
                 "bookmarks.id as bookmarked"

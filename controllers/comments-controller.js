@@ -13,6 +13,7 @@ const getComments = async (req, res) => {
                 "comments.id",
                 "comments.comment",
                 "comments.timestamp",
+                "users.id as user_id",
                 "users.username",
                 "users.avatar"
             );
