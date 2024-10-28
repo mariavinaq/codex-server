@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+    padding: 1.5em;
+}
+
+p {
+    width: 75%;
+    font-family: 'Courier New';
+}
+
+img {
+    width: 2rem;
+}
+
+.mode-toggle {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.mode-toggle i:hover {
+    color: black;
+}
+
+.dark-mode {
+    filter: invert(90%);
+}
+
+.light-mode {
+    filter: invert(0%);
+}

@@ -1,0 +1,34 @@
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: lightblue;
+}
+
+img:hover {
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.small {
+    width: 3rem;
+    margin-left: 1rem;
+}
+
+.medium {
+    width: 5rem;
+    margin-left: 5rem;
+}
+
+.large {
+    width: 7rem;
+}

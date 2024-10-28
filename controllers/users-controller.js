@@ -1,19 +1,22 @@
-// import initKnex from "knex";
-// import configuration from "../knexfile.js";
-// const knex = initKnex(configuration);
+import initKnex from "knex";
+import configuration from "../knexfile.js";
+const knex = initKnex(configuration);
 
-// const postBookmark = async (req, res) => {
-//     const { post_id, user_id = 1 } = req.body;
+const getUser = async (req, res) => {
+    const { userId: userId } = req.params;
 
-//     try {
-//         const newBookmark = await knex("bookmarks").insert({
-//             post_id,
-//             user_id
-//         });
-//         res.status(200).json(newBookmark);
-//     } catch (error) {
-//         res.status(500).json({ message: `Error adding bookmark: ${error}` });
-//     }
-// };
+    try {
+        const user = await knex("users")
+            .where("users.id", userId)
+            .select(
+                "users.username",
+                "users.avatar"
+            )
+            .first();
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json({ message: `Error fetching user: ${error}` });
+    }
+};
 
-// export { postBookmark };
+export { getUser };
