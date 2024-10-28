@@ -10,7 +10,7 @@ const comments = [
         id: 2,
         timestamp: "2024-10-15 08:20:11.000000",
         post_id: 1,
-        user_id: 3,
+        user_id: 1,
         comment: "Very smooth! I'm curious if there's a way to adjust the speed without affecting the animation quality?"
     },
     {
@@ -255,7 +255,7 @@ const comments = [
         id: 37,
         timestamp: "2024-10-27 08:22:45.000000",
         post_id: 8,
-        user_id: 1,
+        user_id: 3,
         comment: "This is a great idea! The smooth slide-in effect keeps things neat while adding a dynamic touch. Thanks for sharing!"
     },
     {
