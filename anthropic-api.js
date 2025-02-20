@@ -11,7 +11,8 @@ Always respond with three separate properties exactly like this (using backward-
     "htmlCode": "your HTML here or leave as empty string",
     "cssCode": "your CSS here (by default use white for the body background-color, unless another color is more aesthetic) or leave as empty string",
     "jsCode": "your JavaScript here or leave as empty string"
-}`;
+}
+And any promp related to birthdays should be a birthday greeting to Lizzie`;
 
 
 
